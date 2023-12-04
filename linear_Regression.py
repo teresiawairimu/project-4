@@ -30,6 +30,7 @@ class AdvertisingAnalysis:
         Visualize the pair-wise relationships in the dataset.
         """
         sns.pairplot(self.df)
+        plt.show()
 
     def check_linearity(self):
         """
@@ -94,16 +95,16 @@ if __name__ == "__main__":
     data = analysis.load_data()
     analysis.data_cleaning()
     analysis.data_distribution()
-    analysis.check_linearity()
+    # analysis.check_linearity()
 
-    features_to_train = ['TV', 'Radio', 'Newspaper']
-    target_variable = 'Sales'
+    # features_to_train = ['TV', 'Radio', 'Newspaper']
+    # target_variable = 'Sales'
     
-    regressor = analysis.train_linear_regression(features_to_train, target_variable)
+    # regressor = analysis.train_linear_regression(features_to_train, target_variable)
     
-    X_test_example = pd.DataFrame({'TV': [200], 'Radio': [20], 'Newspaper': [10]})
-    predictions = analysis.predict(regressor, X_test_example)
+    # X_test_example = pd.DataFrame({'TV': [200], 'Radio': [20], 'Newspaper': [10]})
+    # predictions = analysis.predict(regressor, X_test_example)
     
-    print("Predictions:", predictions)
+    # print("Predictions:", predictions)
     
-    analysis.print_model_summary(features_to_train, target_variable)
+    # analysis.print_model_summary(features_to_train, target_variable)

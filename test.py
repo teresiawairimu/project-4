@@ -2,6 +2,7 @@ import unittest
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 import statsmodels.api as sm
+import numpy as np
 
 # Import the class to be tested
 from linear_Regression import AdvertisingAnalysis
@@ -59,7 +60,7 @@ class TestAdvertisingAnalysis(unittest.TestCase):
         est = sm.OLS(y, X2)
         est2 = est.fit()
         summary = est2.summary()
-        self.assertIsNone(print(summary))  # Change this if print_model_summary returns something
+        self.assertIsNone(print(summary))  
 
 if __name__ == '__main__':
     unittest.main()
